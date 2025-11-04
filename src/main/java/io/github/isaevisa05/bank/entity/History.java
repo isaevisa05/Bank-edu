@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Entity
 @Table(name = "history")
@@ -27,4 +28,14 @@ public class History {
 
     @Column(name = "amount")
     private BigDecimal amount;
+
+    @Column(name = "time", nullable = false)
+    private Instant time;
+
+    @PrePersist
+    protected void onCreate() {
+        time = Instant.now();
+    }
+
+
 }

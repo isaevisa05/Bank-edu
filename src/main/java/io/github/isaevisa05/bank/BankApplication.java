@@ -8,8 +8,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 public class BankApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BankApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BankApplication.class, args);
+    }
 
 }

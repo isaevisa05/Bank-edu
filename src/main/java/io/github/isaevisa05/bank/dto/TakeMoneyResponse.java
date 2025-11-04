@@ -7,10 +7,12 @@ import java.math.BigDecimal;
 @Data
 public class TakeMoneyResponse {
 
+    // -2 -> Неверный формат денег
+    // -1 -> Аккаунт не найден
     // 0 -> Недостаточно средств
     // 1 -> Успех
-    private final int result;
-    private final String error;
+    private int result;
+    private String error;
 
 
 }
