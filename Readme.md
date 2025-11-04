@@ -25,12 +25,21 @@ API может использоваться **банкоматом**, **веб-�
 Java 21
 
 Spring Boot 3
+
 Spring Web
+
 Spring Data JPA / Hibernate
+
 MySQL 8 / PostgreSQL
+
 Swagger / OpenAPI
+
 Lombok
 
+## 🗃️ Структура базы данных
+![img1.png](readme/img1.png)
+
+![img2.png](readme/img2.png)
 
 ## 🧠 Архитектура и логика работы
 
