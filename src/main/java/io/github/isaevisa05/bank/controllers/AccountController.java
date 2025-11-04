@@ -45,17 +45,16 @@ public class AccountController {
     }
 
     @Operation(
-            summary = "Получить историю операций",
-            description = "Возвращает историю операций за выбранный период"
+            summary = "Получить историю операций за выбранный период",
+            description = "Если нужно вернуть историю операций за всё время тогда установите 0 в startDate и endDate"
     )
     @GetMapping("/getOperationList")
     public GetOperationListResponse getOperationList(
             @RequestParam(name = "accountId") long accountId,
             @RequestParam(name = "startDate") Instant startDate,
             @RequestParam(name = "endDate") Instant endDate) {
-        System.out.println(startDate);
-        System.out.println(endDate);
-        return accountsService.getOperationList(accountId, startDate, endDate);
+        if (startDate.getNano() == 0 && endDate.getNano() == 0) return accountsService.getOperationList(accountId);
+        else return accountsService.getOperationList(accountId, startDate, endDate);
     }
 
     @Operation(

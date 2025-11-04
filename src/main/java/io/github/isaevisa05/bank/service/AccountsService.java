@@ -12,9 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -135,7 +132,24 @@ public class AccountsService {
 
         var account = findAccount.get();
 
-        response.setResult(historyRepository.findAllByAccountAndTimeStampRange(account.getId(), startDate, endDate));
+        response.setResult(historyRepository.findAllByAccountIdAndTimeStampRange(account.getId(), startDate, endDate));
+
+        return response;
+    }
+
+    public GetOperationListResponse getOperationList(long accountId) {
+        var response = new GetOperationListResponse();
+
+        var findAccount = accountsRepository.findById(accountId);
+        if(findAccount.isEmpty()) {
+            response.setResult(null);
+            response.setError("Account not found");
+            return response;
+        }
+
+        var account = findAccount.get();
+
+        response.setResult(historyRepository.findAllByAccountId(account.getId()));
 
         return response;
     }
