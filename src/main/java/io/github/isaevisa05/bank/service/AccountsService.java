@@ -20,10 +20,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class AccountsService {
 
-    private static final BigDecimal error1 = BigDecimal.ONE;
-    private static final BigDecimal error0 = BigDecimal.ZERO;
     private static final BigDecimal errorAccountNotFound = new BigDecimal("-1");
-    private static final BigDecimal errorBigDecimal = new BigDecimal("-2");
 
     private final AccountsRepository accountsRepository;
     private final HistoryRepository historyRepository;

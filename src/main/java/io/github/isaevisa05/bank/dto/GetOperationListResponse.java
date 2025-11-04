@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 public class GetOperationListResponse {
 
+    // null -> Аккаунт не найден
     private List<History> result;
     private String error;
 }

@@ -13,11 +13,4 @@ import java.util.Optional;
 public interface HistoryRepository extends JpaRepository<History, Long> {
     @Query("SELECT h FROM History h WHERE (h.payer = :accountId OR h.recipient = :accountId)  AND h.time BETWEEN :startDate AND :endDate")
     List<History> findAllByAccountAndTimeStampRange(Long accountId, Instant startDate, Instant endDate);
-
-//    @Query("SELECT h FROM History h WHERE (h.payer = :account OR h.recipient = :account) AND h.time BETWEEN :startDate AND :endDate ORDER BY h.time DESC")
-//    List<History> findAllByAccountAndTimeStampRange(
-//            @Param("account") Account account,
-//            @Param("startDate") Instant startDate,
-//            @Param("endDate") Instant endDate
-//    );
 }
