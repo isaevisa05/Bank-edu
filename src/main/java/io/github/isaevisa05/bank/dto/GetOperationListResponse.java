@@ -8,5 +8,6 @@ import java.util.List;
 @Data
 public class GetOperationListResponse {
 
-    private final List<History> result;
+    private List<History> result;
+    private String error;
 }

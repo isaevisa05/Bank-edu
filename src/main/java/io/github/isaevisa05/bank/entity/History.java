@@ -17,7 +17,7 @@ public class History {
     private long id;
 
     @Column(name = "payer")
-    private long payer;
+    private Long payer;
 
     @Column(name = "recipient")
     private Long recipient;
@@ -26,7 +26,7 @@ public class History {
     @Enumerated(EnumType.STRING)
     private OperationType type;
 
-    @Column(name = "amount")
+    @Column(name = "amount", precision = 16, scale = 2)
     private BigDecimal amount;
 
     @Column(name = "time", nullable = false)

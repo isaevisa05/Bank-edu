@@ -7,6 +7,6 @@ public class TransferMoneyResponse {
 
     // 0 -> Ошибка при выполнении
     // 1 -> Успех
-    private final int result;
-    private final String error;
+    private int result;
+    private String error;
 }
