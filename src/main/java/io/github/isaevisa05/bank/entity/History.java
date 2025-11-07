@@ -2,6 +2,7 @@ package io.github.isaevisa05.bank.entity;
 
 import io.github.isaevisa05.bank.entity.enums.OperationType;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
